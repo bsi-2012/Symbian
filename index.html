@@ -29,88 +29,75 @@
         <h2>Equipe</h2>
         <p>Fabrício, Martin e Rubens</p>
       </div>
-    </section>
-    <section class="slide">
-      <div>
-        <div style="text-aling: center">
-          <img src="images/logo.jpg" alt="Symbian">
-        </div>
-        <h2>Equipe</h2>
-        <p>Fabrício, Martin e Rubens</p>
-      </div>
-    </section>
-    <section class="slide">
-      <div>
-        <div style="text-aling: center">
-          <img src="images/logo.jpg" alt="Symbian">
-        </div>
-        <h2>Equipe</h2>
-        <p>Fabrício, Martin e Rubens</p>
-      </div>
-    </section>
-    <section class="slide">
-      <div>
-        <div style="text-aling: center">
-          <img src="images/logo.jpg" alt="Symbian">
-        </div>
-        <h2>Equipe</h2>
-        <p>Fabrício, Martin e Rubens</p>
-      </div>
-    </section>
-    <section class="slide">
-      <div>
-        <div style="text-aling: center">
-          <img src="images/logo.jpg" alt="Symbian">
-        </div>
-        <h2>Equipe</h2>
-        <p>Fabrício, Martin e Rubens</p>
-      </div>
-    </section>
-    <section class="slide">
-      <div>
-        <div style="text-aling: center">
-          <img src="images/logo.jpg" alt="Symbian">
-        </div>
-        <h2>Equipe</h2>
-        <p>Fabrício, Martin e Rubens</p>
-      </div>
-    </section>
-    <section class="slide">
-      <div>
-        <div style="text-aling: center">
-          <img src="images/logo.jpg" alt="Symbian">
-        </div>
-        <h2>Equipe</h2>
-        <p>Fabrício, Martin e Rubens</p>
-      </div>
-    </section>
-    <section class="slide">
-      <div>
-        <div style="text-aling: center">
-          <img src="images/logo.jpg" alt="Symbian">
-        </div>
-        <h2>Equipe</h2>
-        <p>Fabrício, Martin e Rubens</p>
-      </div>
-    </section>
-    <section class="slide">
-      <div>
-        <div style="text-aling: center">
-          <img src="images/logo.jpg" alt="Symbian">
-        </div>
-        <h2>Equipe</h2>
-        <p>Fabrício, Martin e Rubens</p>
-      </div>
-    </section>
-    <section class="slide">
-      <div>
-        <div style="text-aling: center">
-          <img src="images/logo.jpg" alt="Symbian">
-        </div>
-        <h2>Equipe</h2>
-        <p>Fabrício, Martin e Rubens</p>
-      </div>
-    </section>
+    </section>                 
+  <section class="slide"><div>  
+      <h2>Núcleo</h2>  
+      A versão 8.0 do Symbian OS, utiliza o núcleo EKA2. 
+      <br />    
+      As principais características são: 
+      <br />
+      <br />
+    <ul>
+      <li class="next">Sistema de tempo real;</li>
+      <li class="next">Múltiplos fluxos de execução;</li>
+      <li class="next">Nanokernel;</li>
+    </ul>
+  </div></section>  
+  <section class="slide"><div>
+      <h2>Núcleo</h2>        
+        O suporte do sistema de tempo real no EKA2, implica um tempo limite maior para os processos que exigem a prioridade em tempo real. 
+        <br /> 
+        <br /> 
+        Ele também faz a gestão dos múltiplos fluxos de execução juntamente com os múltiplos processos.       
+    </div></section> 
+    <section class="slide"><div>
+      <h2>Núcleo</h2>        
+        O nanokernel é uma camada mais baixa do núcleo que implementa diversas tarefas num contexto reduzido. No Symbian OS o nanokernel tem como principal função, simplificar a supervisão dos fluxos de execução e exclusões mútuas.         
+                
+    </div></section>   
+  <section class="slide"><div>
+    <h2>Processos e Threads</h2>        
+    Os sistemas operacionais em geral, assim como o Symbian OS, suportam e fazem múltiplos processos. 
+    O conceito de processo, para Symbian OS, é uma colecção de fluxos de execução que partilham um endereçamento de memória. 
+    Essa partilha de memória comum entre processos é limitada no Symbian OS pelo núcleo, por motivos de
+    segurança dos recursos do sistema.
+  </div></section>  
+  <section class="slide"><div>
+    <h2>Processos e Threads</h2>
+    Um processo simples é composto por um conjunto de recursos e um fluxo de execução. 
+    Multithreading é a execução de um process o composto por vários fluxos de execução que concorrem entre si baseada em prioridades. 
+    O núcleo do Symbian OS disponibiliza o recurso de multithreading, onde vários fluxos de execução podem executar paralelamente sem haver a necessidade do controle dos fluxos de execução no código em execução.   
+  </div></section>  
+
+ <section class="slide"><div>
+    <h2>Processos e Threads</h2>    
+    O nanokernel do Symbian OS suporta os mais simples fluxos de execução do sistema. 
+    <br />
+    <br />
+    As nanothreads utilizam uma pilha, única e simples, do administrador do sistema, ou seja, só pode ser executável no sistema no modo administrador.  
+  </div></section> 
+
+  <section class="slide"><div>
+    <h2>Processos e Threads</h2>    
+    Os processos e fluxos de execução no Symbian OS, são tratados na forma de multi-programação. 
+    <br />
+    <br />
+    O sistema possui ainda, internamente no seu núcleo, uma implementação que facilita a gerência dos recursos dos fluxos de execução. Esse recurso basicamente representa uma solução para a limitação dos recursos que esse SO deve tratar.  
+  </div></section> 
+
+  <section class="slide"><div>
+    <h2>Referências</h2>
+    <ul>
+      <li class="next"><a>http://www.lisha.ufsc.br/~guto/teaching/os/ine5355-2008-2/work/symbianos.pdf</a></li>
+      <li class="next"><a>http://www.pcdebolso.com/notVer.asp?ID=3723</a></li>
+      <li class="next"><a>http://sosistemasoperacionais.wordpress.com/symbian-os/gerencia-de-processos/</a></li>
+      <li class="next"><a>http://www.tecmundo.com.br/nokia/9348-nokia-reafirma-apoio-ao-symbian.htm</a></li>      
+    </ul>
+  </div></section>
+  <section class="slide text-center"><div>
+    <h2>PERGUNTAS?</h2>
+    <h3>Obrigado</h3>    
+  </div></section>
 
     <div class="progress"><div></div></div>
     <script src="js/shower-ck.js"></script>
