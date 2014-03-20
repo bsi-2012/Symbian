@@ -58,9 +58,9 @@
     Nas  versões mais recentes, o processo de multi-programação é melhorado, sao controlados pela nanokernel, e alguns
     desses processos possuem prioridade, como: o controle de chamada telefônicas, aplicação de vídeo, entre outras.
     <br />
-    Uma vez tratado o evento recebido, o escalonador volta a esperar novos eventos, 
-    como os objetos ativos funcionam de maneira cooperativa, existe o risco de uma tarefa 
-    bloquear todo o processo, o que deve ser evitado.
+    Tudo isso é feito pela nanokernel no qual utiliza escalonizadores tradicionais: FIFO e Round Robin,
+    enquanto o FIFO o processo a entrar é o primeiro a sair, no Round Robin são armazenados uma fila circular,
+    dando tempo compartilhado para cada tarefa.
   </div></section> 
      <section class="slide"><div>
   <div class="text-center">                  
