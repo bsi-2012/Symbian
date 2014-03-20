@@ -65,70 +65,62 @@
     Cada processo possui pelo menos uma thread, e caso exista mais de uma, 
     todas elas podem acessar o espaço de memória correspondente ao processo que as contém. 
     <br />
-    Um processo simples é composto por um conjunto de recursos e um fluxo de execução, 
-    multithreading é a execução de um processo composto por vários fluxos de execução que 
+    <br />
+    Um processo simples é composto por um conjunto de recursos e um fluxo de execução. 
+    Multithreading é a execução de um processo composto por vários fluxos de execução que 
     concorrem entre si, baseadas em prioridade. 
   </div></section> 
   <section class="slide"><div>
-    <h2>Processos e Threads</h2>    
     O núcleo do Symbian OS disponibiliza o recurso de multithreadind, onde vários fluxos de execução 
-    podem executar paralelamente,sem haver necessidade do controle dos fluxos de execução 
+    podem executar paralelamente, sem haver necessidade do controle dos fluxos de execução 
     explícito no código em execução.
     <br />
     As nanothreads utilizam uma pilha, única e simples do administrador do sistema, ou seja, 
     só pode ser executável no sistema no modo administrador.
   </div></section>
   <section class="slide"><div>
-    <h2>Processos e Threads</h2>    
     O modelo de arquitetura de muitos serviços no Symbian OS é o cliente/servidor. 
     <br />
-    Um servidor é um aplicativo que não possui interface com o usuário e provê um tipo 
-    de funcionalidade para interessados em utiliza-la, por exemplo, o servidor de arquivos.
-  </div></section>
-  <section class="slide"><div>
-    <h2>Processos e Threads</h2>    
     Os serviços usualmente são executados em um processo separado, de modo que a comunicação 
     entre clientes e servidores se dá através do sistema operacional.
-    <br />
-  </div></section>  
+  </div></section>
   <section class="slide"><div>
     <h2>Estados do Processo</h2>    
     O estado de um processo é definido pelo que o processo está a fazer.
     <br />
   </div></section>  
   <section class="slide"><div>
-    <h2>Estados do Processo - New(Pronto)</h2>     
+    <h2>New(Pronto)</h2>     
     Um processo que está sendo criado e tem sua seção de texto construído a partir do 
     código em um programa, a sua seção de dados e pilha são alocadas na memória e 
     componentes de hardware são inicializados.
     <br />
     </div></section> 
     <section class="slide"><div>
-    <h2>Estados do Processo - Read(Pronto)</h2>     
+    <h2>Read(Pronto)</h2>     
     Processo que está disponível para execução em um processador, mas à espera de execução.
     <br />
     </div></section> 
     <section class="slide"><div>
-    <h2>Estados do Processo - Running(Execução)</h2>     
+    <h2>Running(Execução)</h2>     
     Um processo que está sendo executado em um processador, que está manipulando o 
     hardware e executando as instruções solicitadas.
     <br />
   </div></section> 
   <section class="slide"><div>
-    <h2>Estados do Processo - Waiting(Espera)</h2>     
+    <h2>Waiting(Espera)</h2>     
     Processo que está suspenso e aguardando algum evento externo para ocorrer, 
     o evento externo pode ser qualquer coisa, como uma interrupção para a conclusão de um pedido de I/O.
     <br />
   </div></section>
   <section class="slide"><div>
-    <h2>Estados do Processo - Terminated(Terminado)</h2>     
+    <h2>Terminated(Terminado)</h2>     
     Um processo no estado encerrado foi concluída a sua execução em um processador, 
     quando um processo é finalizado, remove-se as tabelas do sistema e armazenamento de dados, e 
     deixa de ser um processo.
     <br />
   </div></section>
   <section class="slide"><div>
-    <h2>Estados do Processo</h2>     
     Um processo, não pode mover-se do "estado novo" imediatamente a um estado de execução, da 
     mesma forma, um processo não pode estar à espera de um externo evento e ir diretamente para o "estado encerrado". 
     <br />
@@ -137,7 +129,6 @@
     <h2>Referências</h2>
     <ul>
       <li class="next"><a>http://www.lisha.ufsc.br/~guto/teaching/os/ine5355-2008-2/work/symbianos.pdf</a></li>
-      <li class="next"><a>http://www.pcdebolso.com/notVer.asp?ID=3723</a></li>
       <li class="next"><a>http://sosistemasoperacionais.wordpress.com/symbian-os/gerencia-de-processos/</a></li>
       <li class="next"><a>http://www.tecmundo.com.br/nokia/9348-nokia-reafirma-apoio-ao-symbian.htm</a></li>      
       <li class="next"><a>http://www.oficinadanet.com.br/artigo/outros_sistemas/sistema_operacional_symbian_os</li> 
