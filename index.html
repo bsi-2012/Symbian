@@ -30,25 +30,13 @@
         <p>Fabrício, Martin e Rubens</p>
       </div>
     </section>                 
-  <section class="slide"><div>  
-      <h2>Núcleo</h2>  
-      A versão 8.0 do Symbian OS, utiliza o núcleo EKA2. 
-      <br />    
-      As principais características são: 
-      <br />
-      <br />
-    <ul>
-      <li class="next">Sistema de tempo real;</li>
-      <li class="next">Múltiplos fluxos de execução;</li>
-      <li class="next">Nanokernel;</li>
-    </ul>
-  </div></section>  
   <section class="slide"><div>
-      <h2>Núcleo</h2>        
-        O suporte do sistema de tempo real no EKA2, implica um tempo limite maior para os processos que exigem a prioridade em tempo real. 
+      <h2>Processos e Threads</h2>        
+        O Symbian OS é um sistema operacional multitarefa, um aplicativo nesse sistema pode fazer o uso de várias thread's, 
+        embora isso não seja recomendado, devido ao custo que é gerado para administração destes recursos. 
         <br /> 
         <br /> 
-        Ele também faz a gestão dos múltiplos fluxos de execução juntamente com os múltiplos processos.       
+        Para evitar esse tipo de situação, o Symbian OS possui um framework para comunicação assíncrona, batizado de Active Objects.
     </div></section> 
     <section class="slide"><div>
       <h2>Núcleo</h2>        
@@ -57,34 +45,95 @@
     </div></section>   
   <section class="slide"><div>
     <h2>Processos e Threads</h2>        
-    Os sistemas operacionais em geral, assim como o Symbian OS, suportam e fazem múltiplos processos. 
-    O conceito de processo, para Symbian OS, é uma colecção de fluxos de execução que partilham um endereçamento de memória. 
-    Essa partilha de memória comum entre processos é limitada no Symbian OS pelo núcleo, por motivos de
-    segurança dos recursos do sistema.
+    Os Active Objects podem ser usados para implementar processamento cooperativo, simulando a existência de várias thread's.
+    Uma thread qualquer possui um escalonador ativo. 
+    O escalonador espera por eventos e quando este acontece, invoca o objeto ativo que estava esperando pelo evento. 
   </div></section>  
   <section class="slide"><div>
     <h2>Processos e Threads</h2>
-    Um processo simples é composto por um conjunto de recursos e um fluxo de execução. 
-    Multithreading é a execução de um process o composto por vários fluxos de execução que concorrem entre si baseada em prioridades. 
-    O núcleo do Symbian OS disponibiliza o recurso de multithreading, onde vários fluxos de execução podem executar paralelamente sem haver a necessidade do controle dos fluxos de execução no código em execução.   
+    Uma vez tratado o evento recebido, o escalonador volta a esperar novos eventos, 
+    como os objetos ativos funcionam de maneira cooperativa, existe o risco de uma tarefa 
+    bloquear todo o processo, o que deve ser evitado.
   </div></section>  
-
  <section class="slide"><div>
     <h2>Processos e Threads</h2>    
-    O nanokernel do Symbian OS suporta os mais simples fluxos de execução do sistema. 
+    Os processos no Symbian OS possuem espaço de memória reservado para eles, 
+    não sendo possível que outro processo acesse essa área diretamente, por questões de segurança. 
     <br />
     <br />
-    As nanothreads utilizam uma pilha, única e simples, do administrador do sistema, ou seja, só pode ser executável no sistema no modo administrador.  
+    Vários processos podem ser "executados" ao mesmo tempo, sendo o kernel responsável por realizar a gestão de execução. 
   </div></section> 
-
   <section class="slide"><div>
     <h2>Processos e Threads</h2>    
-    Os processos e fluxos de execução no Symbian OS, são tratados na forma de multi-programação. 
+    Cada processo possui pelo menos uma thread, e caso exista mais de uma, 
+    todas elas podem acessar o espaço de memória correspondente ao processo que as contém. 
     <br />
-    <br />
-    O sistema possui ainda, internamente no seu núcleo, uma implementação que facilita a gerência dos recursos dos fluxos de execução. Esse recurso basicamente representa uma solução para a limitação dos recursos que esse SO deve tratar.  
+    Um processo simples é composto por um conjunto de recursos e um fluxo de execução, 
+    multithreading é a execução de um processo composto por vários fluxos de execução que 
+    concorrem entre si, baseadas em prioridade. 
   </div></section> 
-
+  <section class="slide"><div>
+    <h2>Processos e Threads</h2>    
+    O núcleo do Symbian OS disponibiliza o recurso de multithreadind, onde vários fluxos de execução 
+    podem executar paralelamente,sem haver necessidade do controle dos fluxos de execução 
+    explícito no código em execução.
+    <br />
+    As nanothreads utilizam uma pilha, única e simples do administrador do sistema, ou seja, 
+    só pode ser executável no sistema no modo administrador.
+  </div></section>
+  <section class="slide"><div>
+    <h2>Processos e Threads</h2>    
+    O modelo de arquitetura de muitos serviços no Symbian OS é o cliente/servidor. 
+    <br />
+    Um servidor é um aplicativo que não possui interface com o usuário e provê um tipo 
+    de funcionalidade para interessados em utiliza-la, por exemplo, o servidor de arquivos.
+  </div></section>
+  <section class="slide"><div>
+    <h2>Processos e Threads</h2>    
+    Os serviços usualmente são executados em um processo separado, de modo que a comunicação 
+    entre clientes e servidores se dá através do sistema operacional.
+    <br />
+  </div></section>  
+  <section class="slide"><div>
+    <h2>Estados do Processo</h2>    
+    O estado de um processo é definido pelo que o processo está a fazer.
+    <br />
+  </div></section>  
+  <section class="slide"><div>
+    <h2>Estados do Processo - New(Pronto)</h2>     
+    Um processo que está sendo criado e tem sua seção de texto construído a partir do 
+    código em um programa, a sua seção de dados e pilha são alocadas na memória e 
+    componentes de hardware são inicializados.
+    <br />
+    <section class="slide"><div>
+    <h2>Estados do Processo - Read(Pronto)</h2>     
+    Processo que está disponível para execução em um processador, mas à espera de execução.
+    <br />
+    <section class="slide"><div>
+    <h2>Estados do Processo - Running(Execução)</h2>     
+    Um processo que está sendo executado em um processador, que está manipulando o 
+    hardware e executando as instruções solicitadas.
+    <br />
+  </div></section> 
+  <section class="slide"><div>
+    <h2>Estados do Processo - Waiting(Espera)</h2>     
+    Processo que está suspenso e aguardando algum evento externo para ocorrer, 
+    o evento externo pode ser qualquer coisa, como uma interrupção para a conclusão de um pedido de I/O.
+    <br />
+  </div></section>
+  <section class="slide"><div>
+    <h2>Estados do Processo - Terminated(Terminado)</h2>     
+    Um processo no estado encerrado foi concluída a sua execução em um processador, 
+    quando um processo é finalizado, remove-se as tabelas do sistema e armazenamento de dados, e 
+    deixa de ser um processo.
+    <br />
+  </div></section>
+  <section class="slide"><div>
+    <h2>Estados do Processo</h2>     
+    Um processo, não pode mover-se do "estado novo" imediatamente a um estado de execução, da 
+    mesma forma, um processo não pode estar à espera de um externo evento e ir diretamente para o "estado encerrado". 
+    <br />
+  </div></section>
   <section class="slide"><div>
     <h2>Referências</h2>
     <ul>
@@ -92,13 +141,9 @@
       <li class="next"><a>http://www.pcdebolso.com/notVer.asp?ID=3723</a></li>
       <li class="next"><a>http://sosistemasoperacionais.wordpress.com/symbian-os/gerencia-de-processos/</a></li>
       <li class="next"><a>http://www.tecmundo.com.br/nokia/9348-nokia-reafirma-apoio-ao-symbian.htm</a></li>      
+      <li class="next"><a>http://www.oficinadanet.com.br/artigo/outros_sistemas/sistema_operacional_symbian_os</li> 
     </ul>
   </div></section>
-  <section class="slide text-center"><div>
-    <h2>PERGUNTAS?</h2>
-    <h3>Obrigado</h3>    
-  </div></section>
-
     <div class="progress"><div></div></div>
     <script src="js/shower-ck.js"></script>
   <!-- Copyright © 2013 Yours Truly, Famous Inc. -->
