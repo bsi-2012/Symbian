@@ -53,7 +53,23 @@
     Uma vez tratado o evento recebido, o escalonador volta a esperar novos eventos, 
     como os objetos ativos funcionam de maneira cooperativa, existe o risco de uma tarefa 
     bloquear todo o processo, o que deve ser evitado.
-  </div></section>  
+  </div></section> 
+  
+  <section class="slide"><div>
+    Nas versão mais recentes de Symbian o processo de multi­programação é melhorad  
+    ,são controladas pela nanokernel, e alguns desses processos possuem prioridade, 
+    como o controle de chamadas telefônicas, aplicações de vídeo e música e animações.  
+    Tudo isso, é realizado pela nanokernel, no qual utiliza escalonadores tradicionais: 
+    FIFO e Round­Robin, enquanto o FIFO o primeiro processo a entrar é o primeiro a sair, no
+    Round­Robin são armazenados em uma fila circular, dando tempo compartilhado para cada tarefa.
+  </div></section> 
+     <section class="slide"><div>
+  <div class="text-center">                  
+          <img src="http://nsae01.casimages.net/img/2014/03/20/140320055249480175.gif" alt="Symbian">        
+        </div>
+  </div></section> 
+  
+  
   
  <section class="slide"><div>
     Os processos no Symbian OS possuem espaço de memória reservado para eles, 
@@ -62,11 +78,7 @@
     <br />
     Vários processos podem ser "executados" ao mesmo tempo, sendo o kernel responsável por realizar a gestão de execução. 
   </div></section> 
-    <section class="slide"><div>
-  <div class="text-center">                  
-          <img src="http://nsae01.casimages.net/img/2014/03/20/140320055834676175.jpg" alt="Symbian">        
-        </div>
-  </div></section> 
+  
   <section class="slide"><div>
     Cada processo possui pelo menos uma thread, e caso exista mais de uma, 
     todas elas podem acessar o espaço de memória correspondente ao processo que as contém. 
@@ -84,11 +96,13 @@
     As nanothreads utilizam uma pilha, única e simples do administrador do sistema, ou seja, 
     só pode ser executável no sistema no modo administrador.
   </div></section>
+  
     <section class="slide"><div>
   <div class="text-center">                  
-          <img src="http://nsae01.casimages.net/img/2014/03/20/140320055249480175.gif" alt="Symbian">        
+          <img src="http://nsae01.casimages.net/img/2014/03/20/140320055834676175.jpg" alt="Symbian">        
         </div>
   </div></section> 
+ 
   <section class="slide"><div>
     O modelo de arquitetura de muitos serviços no Symbian OS é o cliente/servidor. 
     <br />
