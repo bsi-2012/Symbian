@@ -50,13 +50,11 @@
     O escalonador espera por eventos e quando este acontece, invoca o objeto ativo que estava esperando pelo evento. 
   </div></section>  
   <section class="slide"><div>
-    <h2>Processos e Threads</h2>
     Uma vez tratado o evento recebido, o escalonador volta a esperar novos eventos, 
     como os objetos ativos funcionam de maneira cooperativa, existe o risco de uma tarefa 
     bloquear todo o processo, o que deve ser evitado.
   </div></section>  
  <section class="slide"><div>
-    <h2>Processos e Threads</h2>    
     Os processos no Symbian OS possuem espaço de memória reservado para eles, 
     não sendo possível que outro processo acesse essa área diretamente, por questões de segurança. 
     <br />
@@ -64,7 +62,6 @@
     Vários processos podem ser "executados" ao mesmo tempo, sendo o kernel responsável por realizar a gestão de execução. 
   </div></section> 
   <section class="slide"><div>
-    <h2>Processos e Threads</h2>    
     Cada processo possui pelo menos uma thread, e caso exista mais de uma, 
     todas elas podem acessar o espaço de memória correspondente ao processo que as contém. 
     <br />
