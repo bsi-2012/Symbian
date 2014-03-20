@@ -46,22 +46,27 @@ recursos.
 de Active Objects.
     </div></section> 
   <section class="slide"><div>
-    Os Active Objects podem ser usados para implementar processamento cooperativo, simulando a existência de várias thread's.
-    Uma thread qualquer possui um escalonador ativo. 
-    O escalonador espera por eventos e quando este acontece, invoca o objeto ativo que estava esperando pelo evento. 
+    Os Active Objects podem ser usados para implementar processamento cooperativo, 
+simulando a existência de várias thread's. Uma thread possui um escalonador ativo, em que 
+o escalonador espera por eventos e quando este acontece, invoca o objeto ativo que estava
+esperando pelo evento.
   </div></section>  
   <section class="slide"><div>
-    Uma vez tratado o evento recebido, o escalonador volta a esperar novos eventos, 
-    como os objetos ativos funcionam de maneira cooperativa, existe o risco de uma tarefa 
-    bloquear todo o processo, o que deve ser evitado.
+    
+Uma vez tratado o evento recebido, o escalonador volta a esperar novos eventos.
+Como os objetos ativos funcionam de maneira cooperativa, existe o risco de uma 
+tarefa bloquear todo o processo, o que deve ser evitado.
   </div></section> 
    <section class="slide"><div>
-    Nas  versões mais recentes, o processo de multi-programação é melhorado, sao controlados pela nanokernel, e alguns
-    desses processos possuem prioridade, como: o controle de chamada telefônicas, aplicação de vídeo, entre outras.
+    Nas versões mais recentes, o processo de multi-programação é melhorado, são 
+controlados pela nanokernel, e alguns desses processos 
+possuem prioridade, como: o controle de chamada telefônicas, aplicação de vídeo, 
+entre outras.
     <br />
-    Tudo isso é feito pela nanokernel no qual utiliza escalonizadores tradicionais: FIFO e Round Robin,
-    enquanto o FIFO o processo a entrar é o primeiro a sair, no Round Robin são armazenados uma fila circular,
-    dando tempo compartilhado para cada tarefa.
+    Tudo isso é feito pela nanokernel que utiliza escalonizadores tradicionais: 
+FIFO e Round Robin, enquanto o FIFO utiliza o processo de primeiro a entrar, primeiro a sair.
+No Round Robin são armazenados uma fila circular, dando tempo um compartilhado entre
+todas as tarefa.
   </div></section> 
      <section class="slide"><div>
   <div class="text-center">                  
@@ -72,21 +77,25 @@ de Active Objects.
   
   
  <section class="slide"><div>
-    Os processos no Symbian OS possuem espaço de memória reservado para eles, 
-    não sendo possível que outro processo acesse essa área diretamente, por questões de segurança. 
+    Os processos no Symbian OS possuem espaço de memória reservado, 
+não sendo possível que outro processo acesse essa área
+diretamente, por questões de segurança.
     <br />
     <br />
     Vários processos podem ser "executados" ao mesmo tempo, sendo o kernel responsável por realizar a gestão de execução. 
   </div></section> 
   
   <section class="slide"><div>
-    Cada processo possui pelo menos uma thread, e caso exista mais de uma, 
-    todas elas podem acessar o espaço de memória correspondente ao processo que as contém. 
+    
+O núcleo do Symbian OS disponibiliza o recurso de multithreadind, onde vários fluxos 
+de execução podem executar paralelamente, sem haver necessidade do controle 
+dos fluxos de execução explícito no código em execução.
     <br />
     <br />
-    Um processo simples é composto por um conjunto de recursos e um fluxo de execução. 
-    Multithreading é a execução de um processo composto por vários fluxos de execução que 
-    concorrem entre si, baseadas em prioridade. 
+    
+As nanothreads utilizam uma pilha, única e simples do administrador
+do sistema, ou seja, só pode ser executada no sistema no modo
+administrador.
   </div></section> 
   <section class="slide"><div>
     O núcleo do Symbian OS disponibiliza o recurso de multithreadind, onde vários fluxos de execução 
@@ -111,7 +120,7 @@ de Active Objects.
   </div></section>
   <section class="slide"><div>
     <h2>Estados do Processo</h2>    
-    O estado de um processo é definido pelo que o processo está a fazer.
+    O estado de um processo é definido pelo que o processo está fazendo.
     <br />
   </div></section>  
   <section class="slide"><div>
